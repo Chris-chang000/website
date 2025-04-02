@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 Unity 遊戲</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>我的 Unity 遊戲</h1>
+    <h2>遊戲名稱</h2>
+    <p> 3D 躲避球遊戲</p>
+    
+    <button id="themeToggle">夜間模式</button>
+    <script>
+        const button = document.getElementById("themeToggle");
+        button.addEventListener("click", function() {
+            if (document.body.style.backgroundColor === "white") {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                button.textContent = "白天模式";
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                button.textContent = "夜間模式";
+            }
+        });
+    </script>
+</body>
+</html>
+
