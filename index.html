@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D躲避球遊戲介紹</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            padding-left: 20px; /* 讓內容有些間距 */
+            margin: 0; /* 移除頁面空隙 */
+        }
+
+        /* 標題區域的灰色背景，並且使標題居中 */
+        h1 {
+            margin: 0;
+            padding: 50px 100px;
+            background-color: #a9a9a9; /* 深灰色背景 */
+            display: inline-block;
+            border-radius: 10px; /* 方塊邊緣圓角 */
+            text-align: center;
+            width: 100%; /* 容許標題區域寬度達到整個頁面 */
+            max-width: 1200px; /* 限制最大寬度，避免過長 */
+        }
+
+        /* 左側清單的灰色背景 */
+        nav {
+            background-color: #a9a9a9; /* 深灰色背景 */
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 250px; /* 清單區域的固定寬度 */
+            position: fixed; /* 固定在左側 */
+            top: 150px; /* 避開標題區域 */
+            left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0; /* 項目之間的間隔 */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 內容區域 */
+        section {
+            margin-left: 280px; /* 讓內容區域向右移動，避開左側清單 */
+            margin-top: 20px;
+        }
+
+        img {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+
+        /* 夜間模式 */
+        .night-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .night-mode img {
+            filter: brightness(0.7); /* 使圖片在夜間模式下稍微暗一點 */
+        }
+
+        /* 夜間模式按鈕 */
+        button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>3D躲避球</h1>
+        <button id="themeToggle">夜間模式</button>
+    </header>
+
+    <!-- 清單導航 -->
+    <nav>
+        <ul>
+            <li><a href="#section1">角色移動與撿球</a></li>
+            <li><a href="#section2">移動目標物</a></li>
+            <li><a href="#section3">物品介紹</a></li>
+            <li><a href="#section5">遊戲創作理念</a></li>
+        </ul>
+    </nav>
+
+    <!-- 各個介紹部分 -->
+    <section id="section1">
+        <h2>1. 角色移動與撿球</h2>
+        <p>玩家的角色可以使用 WASD 鍵進行移動，並且按 Z 鍵來撿起球並丟出去。</p>
+        <img src="https://raw.githubusercontent.com/Chris-chang000/website/main/images/螢幕擷取畫面%202025-04-05%20160524.png" alt="圖片說明">
+
+    </section>
+
+    <section id="section2">
+        <h2>2. 移動目標物</h2>
+        <p>遊戲中有一些移動的目標物，玩家可以用來練習瞄準和丟球。</p>
+        <img src="https://raw.githubusercontent.com/Chris-chang000/website/main/images/螢幕擷取畫面%202025-04-05%20164135.png" alt="圖片說明">
+        <img src="https://raw.githubusercontent.com/Chris-chang000/website/main/images/螢幕擷取畫面%202025-04-05%20161644.png" alt="圖片說明">
+
+    </section>
+
+    <section id="section3">
+        <h2>3. 物品介紹</h2>
+        <p>遊戲中的物品。</p>
+        <img src="https://raw.githubusercontent.com/Chris-chang000/website/main/images/螢幕擷取畫面%202025-04-05%20164628.png" alt="圖片說明">
+
+    </section>
+
+    <section id="section5">
+        <h2>4. 遊戲創作理念</h2>
+        <p>本遊戲的創作理念是讓玩家能夠享受簡單而有趣的 3D 躲避球體驗，並且提升反應速度。</p>
+        <img src="images/creation_concept.jpg" alt="遊戲創作理念">
+    </section>
+
+    <script>
+        const button = document.getElementById("themeToggle");
+
+        button.addEventListener("click", function() {
+            // 切換夜間模式
+            document.body.classList.toggle("night-mode");
+
+            // 更新按鈕文字
+            if (document.body.classList.contains("night-mode")) {
+                button.textContent = "白天模式";
+            } else {
+                button.textContent = "夜間模式";
+            }
+        });
+    </script>
+</body>
+</html>
